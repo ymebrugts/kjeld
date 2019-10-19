@@ -64,11 +64,11 @@
                 </div>
             </div>
         </div>
-        <v-divider style="margin:0 20px 20px 20px;"></v-divider>
+        <v-divider id="logodivider"></v-divider>
         <div class="pictures">
-            <img src="../assets/logo.png" alt="">
-            <img src="../assets/novatecFinal.png" alt="">
-            <img src="../assets/Groenenberg-Reclbord_v3-3.jpg" alt="">
+            <div class="picturesdiv"><img src="../assets/Asset.svg" alt=""></div>
+            <div class="picturesdiv"><img src="../assets/novatecFinal.png" alt=""></div>
+            <div class="picturesdiv"><img src="../assets/Groenenberg-Reclbord_v3-3.jpg" alt=""></div>
         </div>
     </div>
 </template>
@@ -232,15 +232,22 @@
         align-items: center;
     }
 
-    .pictures img {
-        max-width: 33%;
-        height: 180px;
+    .picturesdiv {
+        width:33%;
+        justify-content: center;
+        display: flex;
+    }
 
+    .pictures img {
+        height: 180px;
+        max-height:180px;
+        max-width:100%;
     }
 
     .name-last-donator {
         max-width: 900px;
         overflow: hidden;
+        white-space: nowrap;
     }
 
     .donator-name-list {
@@ -255,6 +262,10 @@
         flex-direction: row;
     }
 
+    #logodivider {
+        margin:0 20px;
+    }
+
     @media only screen and (max-width: 1300px) {
         .application-wrapper {
             height: unset;
@@ -267,6 +278,10 @@
         }
         h1 {
             font-size: 62px;
+        }
+
+        #logodivider {
+            margin:0 20px 20px 20px;
         }
 
         h2 {
@@ -325,7 +340,6 @@
             white-space: pre-wrap;
         }
         .pictures img {
-            height:unset;
             padding:5px;
             object-fit: contain;
         }
